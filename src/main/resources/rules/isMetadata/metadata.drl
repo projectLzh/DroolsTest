@@ -1,0 +1,23 @@
+package rules.isDeclare
+
+import java.util.Date
+
+declare Person
+    name : String @key @maxLength(2)
+    dateOfBirth : Date
+end
+
+rule "declareInsert"
+    when
+    then
+        Person p=new Person();
+        p.setName("aaaaaaaaaaaaaaa");
+        insert(p);
+end
+
+rule "declareTest"
+    when
+        $p:Person();
+    then
+       System.out.println("--------------"+$p.getName());
+end

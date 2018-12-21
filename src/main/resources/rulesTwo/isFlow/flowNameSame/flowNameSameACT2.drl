@@ -1,0 +1,25 @@
+package rulesTwo.isFlow.flowNameSame
+
+rule "测试规则流参数相同规则1"
+ruleflow-group "FlowNameSame"
+activation-group "actSame"
+    when
+    then
+        System.out.println(drools.getRule().getName());
+end
+
+rule "测试规则流参数相同规则2"
+ruleflow-group "FlowNameSame"
+activation-group "actSame"
+    when
+    then
+        System.out.println(drools.getRule().getName());
+end
+
+rule "未设置规则流参数的规则"
+activation-group "actSame"
+salience 10
+    when
+    then
+        System.out.println(drools.getRule().getName());
+end

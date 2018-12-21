@@ -1,0 +1,22 @@
+package rules.isLockNoActive
+import com.pojo.Person;
+
+rule "testLockNoActive1"
+    lock-on-active true
+    when
+        $p:Person(name=="张三");
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testLockNoActive1 设置 no-loop时的效果");
+end
+
+rule "testLockNoActive2"
+    lock-on-active true
+    when
+        $p:Person(age==30);
+    then
+       $p.setName("张三");
+       update($p);
+       System.out.println("testLockNoActive2 设置 no-loop时的效果");
+end

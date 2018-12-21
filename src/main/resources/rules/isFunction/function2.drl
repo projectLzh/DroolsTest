@@ -1,0 +1,10 @@
+package rules.isFunction
+
+rule "function2"
+    when
+    then
+        function01();
+        System.out.println("函数function02()的返回值"+function02());
+        function03("张小小");
+        System.out.println("函数function04()的返回值"+function04("李小小"));
+end

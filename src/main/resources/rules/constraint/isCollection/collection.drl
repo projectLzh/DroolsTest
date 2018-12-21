@@ -1,0 +1,42 @@
+package rules.constraint.isCollection;
+
+import com.pojo.Person;
+import com.pojo.School;
+
+rule collectionTestList
+    when
+        $s:School();
+    then
+      System.out.println("School属性classNameList的第二个元素为"+$s.getClassNameList().get(1));
+end
+
+
+rule collectionTestList2
+    when
+        $s:School(classNameList[1]=="二班");
+    then
+      System.out.println("规则 collectionTestList2   School属性classNameList的第二个元素为"+$s.getClassNameList().get(1));
+end
+
+
+rule collectionTestSet
+    when
+        $s:School();
+    then
+      System.out.println("School属性classNameSet的第一个元素为"+$s.getClassNameSet().iterator().next());
+end
+
+
+ rule collectionTestMap
+     when
+         $s:School();
+     then
+       System.out.println("School属性classNameMap的元素Key为一班的值"+$s.getClassNameMap().get("一班"));
+ end
+
+rule collectionTestMap2
+  when
+      $s:School(classNameMap.get("一班")=="1");
+  then
+    System.out.println("规则 collectionTestMap2 School属性classNameMap的元素Key为一班的值"+$s.getClassNameMap().get("一班"));
+end

@@ -1,0 +1,37 @@
+package rules.isDate
+/*
+
+rule "testDateEffective1"
+ date-effective "07-Aug-2018"
+    when
+        eval(true)
+    then
+        System.out.println("表示 当前系统日期 大于等于  date-effective 的参数");
+end
+
+rule "testDateExpires1"
+ date-expires   "08-Aug-2018"
+    when
+        eval(true)
+    then
+        System.out.println("表示 当前系统日期 小于等于  date-expires 的参数");
+end
+
+
+rule "testDateExpires2"
+ date-expires "32-Aug-2018"
+    when
+        eval(true)
+    then
+        System.out.println("testDateExpires2 表示 当前系统日期 小于等于  date-expires 的参数");
+end
+*/
+
+
+rule "testDateExpires3"
+ date-expires "2018-08-08"
+    when
+        eval(true)
+    then
+        System.out.println("testDateExpires3 表示 当前系统日期 小于等于  date-expires 的参数");
+end

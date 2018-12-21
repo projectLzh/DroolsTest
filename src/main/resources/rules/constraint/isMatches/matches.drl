@@ -1,0 +1,18 @@
+package rules.constraint.isMatches;
+
+import com.pojo.Person;
+
+rule matchesTest001
+    when
+       $p:Person(name  matches  "(zsxxx||z.*)[sf-z]");
+    then
+      System.out.println("恭喜你，成功的使用了 matches");
+end
+
+
+rule matchesTest002
+    when
+       $p:Person(name  not matches  "(zs && s.*)[sf-z]");
+    then
+      System.out.println("恭喜你，成功的使用了 not matches");
+end

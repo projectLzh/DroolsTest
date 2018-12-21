@@ -1,0 +1,20 @@
+package rules.isRHSCommand
+import com.pojo.Person;
+
+rule "测试drools.halt()1"
+no-loop true
+salience 20
+    when
+    then
+       System.out.println("输出测试drools.halt()1");
+       drools.halt();
+end
+
+rule "测试drools.halt()2"
+no-loop true
+salience 10
+    when
+    then
+    System.out.println("输出测试drools.halt()2");
+    drools.halt();
+end

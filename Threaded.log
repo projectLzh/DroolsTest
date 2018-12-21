@@ -1,0 +1,207 @@
+<object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>1</factId>
+      <objectToString>Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test001 [0]</activationId>
+      <rule>test001</rule>
+      <declarations></declarations>
+      <factHandleIds>0</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test001 [0]</activationId>
+      <rule>test001</rule>
+      <declarations></declarations>
+      <factHandleIds>0</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test001 [0]</activationId>
+      <rule>test001</rule>
+      <declarations></declarations>
+      <factHandleIds>0</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test002 [1]</activationId>
+      <rule>test002</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test002 [1]</activationId>
+      <rule>test002</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test002 [1]</activationId>
+      <rule>test002</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test003 [1]</activationId>
+      <rule>test003</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test003 [1]</activationId>
+      <rule>test003</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test003 [1]</activationId>
+      <rule>test003</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>你好 [1]</activationId>
+      <rule>你好</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>你好 [1]</activationId>
+      <rule>你好</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=30, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>你好 [1]</activationId>
+      <rule>你好</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test005 [1]</activationId>
+      <rule>test005</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test005 [1]</activationId>
+      <rule>test005</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test005 [1]</activationId>
+      <rule>test005</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test006 [1]</activationId>
+      <rule>test006</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test006 [1]</activationId>
+      <rule>test006</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test006 [1]</activationId>
+      <rule>test006</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>test007 [1]</activationId>
+      <rule>test007</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>test007 [1]</activationId>
+      <rule>test007</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>test007 [1]</activationId>
+      <rule>test007</rule>
+      <declarations>$p=Person{name=&apos;张三&apos;, age=40, className=&apos;null&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+  </events>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>

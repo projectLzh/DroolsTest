@@ -1,0 +1,14 @@
+/*
+
+package rules.isFunction2
+
+rule "function1"
+    when
+    then
+        function01();
+        System.out.println("函数function02()的返回值"+function02());
+        function03("张不三");
+        System.out.println("函数function04()的返回值"+function04("李不四"));
+end
+
+*/

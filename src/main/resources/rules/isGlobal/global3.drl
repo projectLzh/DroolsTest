@@ -1,0 +1,22 @@
+package rules.isGlobal
+import com.pojo.Person;
+//global  java.lang.Boolean count;
+global  java.util.List  list;
+global  com.pojo.Person  person;
+
+rule "global3的使用update1"
+    when
+    then
+        System.out.println("global3update1------------>list.size"+list.size());
+        list.add("aaa");
+        list.add("aaa");
+        list.add("aaa");
+        person.setName("张小三");
+end
+
+rule "global3的使用update2"
+    when
+    then
+        System.out.println("global3update1------------>list.size"+list.size());
+        System.out.println("global3update1------------>person"+person.getName());
+end

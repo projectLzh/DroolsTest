@@ -1,0 +1,9 @@
+package rulesTwo.isFlow.flowJava
+
+
+ rule "规则流调用Java方法第一个例子"
+ ruleflow-group "flowToJava"
+     when
+     then
+         System.out.println(drools.getRule().getName());
+ end

@@ -1,0 +1,12 @@
+package rulesTwo.isDSL.scope;
+import com.pojo.Person;
+expander personDSL.dsl
+规则开始 "dslTest"
+   when
+     学生办找一个人
+     - 年龄 小于或等于 30
+     - 名字 是 "张三"
+    then
+       名字
+       学习决定将你安排到"11班"
+规则结束

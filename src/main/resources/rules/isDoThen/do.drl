@@ -1,0 +1,77 @@
+package rules.isDoThen
+import com.pojo.Person
+
+rule "testDoNo1"
+    when
+       $p:Person(name=="张小三")
+       do[then01]
+    then
+        System.out.println("-----------------------");
+    then[then01]
+        System.out.println("***********************");
+end
+
+
+/*rule "testDoNo2"
+    when
+       $p:Person(name=="张小三")
+       do[then01]
+       do[then02]
+    then
+        System.out.println("-----------------------");
+    then[then01]
+        System.out.println("***********************");
+    then[then03]
+        System.out.println("///////////////////////");
+end*/
+
+
+rule "testDoNo3"
+    when
+       $p:Person(name=="张小三")
+       do[then03]
+       do[then03]
+    then
+        System.out.println("-----------------------");
+    then[then01]
+        System.out.println("***********************");
+    then[then03]
+        System.out.println("///////////////////////");
+end
+
+
+/*rule "testDoNo4"
+    when
+       $p:Person(name=="张小三")
+       do[then01]
+       do[then03]
+    then
+       System.out.println("-----------------------");
+    then[then01]
+       System.out.println("***********************");
+       $p.setName("王五");
+    then[then03]
+       System.out.println("///////////////////////");
+       $p.setName("李四");
+end*/
+
+
+rule "testDoNo5"
+ when
+       $p:Person(name=="张小三")
+       do[then03]
+       do[then01]
+
+    then
+      System.out.println("-----------------------");
+      $p.setName("赵六");
+      //update($p);
+    then[then01]
+       System.out.println("***********************");
+       $p.setName("王五");
+       update($p);
+    then[then03]
+       System.out.println("///////////////////////");
+       $p.setName("李四");
+       update($p);
+end

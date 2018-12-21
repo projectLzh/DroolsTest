@@ -1,0 +1,64 @@
+package rules.constraint.isMemberOf;
+
+import com.pojo.Person;
+import com.pojo.School;
+
+rule memberOfTest001
+    when
+        $s:School();
+        $p:Person(className  memberOf $s.getClassNameArray());
+    then
+      System.out.println("恭喜你 memberOfTest001，成功的使用了 memberOf");
+end
+
+
+
+
+rule memberOfTest002
+    when
+        $s:School();
+        $p:Person(className  memberOf "一班");
+    then
+      System.out.println("恭喜你 memberOfTest002，成功的使用了 memberOf");
+end
+
+rule memberOfTest003
+       when
+           $s:School();
+           $p:Person(className  memberOf $s.className);
+       then
+         System.out.println("恭喜你 memberOfTest003，成功的使用了 memberOf");
+end
+
+rule memberOfTest004
+       when
+           $s:School();
+           $p:Person(className  memberOf $s.classNameList);
+       then
+         System.out.println("恭喜你 memberOfTest004，成功的使用了 memberOf");
+end
+
+rule memberOfTest005
+       when
+           $s:School();
+           $p:Person(className  memberOf $s.classNameSet);
+       then
+         System.out.println("恭喜你 memberOfTest005，成功的使用了 memberOf");
+end
+
+rule memberOfTest006
+       when
+           $s:School();
+           $p:Person(className  memberOf $s.classNameMap);
+       then
+             System.out.println("恭喜你 memberOfTest006，成功的使用了 memberOf");
+end
+
+
+rule memberOfTest007
+       when
+           $s:School();
+           $p:Person(className  not memberOf $s.classNameMap);
+       then
+             System.out.println("恭喜你 memberOfTest007，成功的使用了 memberOf");
+end

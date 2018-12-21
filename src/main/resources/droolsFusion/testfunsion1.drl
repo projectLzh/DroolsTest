@@ -1,0 +1,15 @@
+package droolsFusion
+import com.pojo.Person;
+
+declare Person
+       @role( event )
+       @expires( 20s )
+end
+
+rule "testdroolsFusion"
+
+	when
+        $p:Person(name=="张三") over window:length(2)
+	then
+        System.out.println("age="+$p.getAge());
+end

@@ -1,0 +1,12 @@
+package rules.isQuery
+
+import  com.pojo.Person;
+
+query "person age is 30"
+    person:Person(age==30)
+end
+
+query "person age is 30 and name is 张小三"(String $name)
+    person:Person(name==$name,age==30)
+end
+

@@ -1,0 +1,11 @@
+package rules.isAccumulate
+import com.pojo.Person;
+import  accumulate  com.rulesAccumulate.TestAccunmulateneeded factorial
+
+rule "自定义函数阶乘"
+dialect "mvel"
+when
+  accumulate(Person($value:age !=null ),$factorial:factorial($value))
+then
+System.out.println("自定义函数>>>>>>>>>>>>"+$factorial);
+end

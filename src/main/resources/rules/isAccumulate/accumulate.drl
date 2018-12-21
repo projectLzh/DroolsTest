@@ -1,0 +1,48 @@
+package rules.isAccumulate
+import com.pojo.Person;
+
+
+rule "测试 Accumulate 第一种 取对象中的最大值，和最小值"
+    when
+            accumulate(Person($age:age),$min:min($age),$max:max($age),$sum:sum($age);$max>=5)
+    then
+        System.out.println("传入的对象最小值为"+$min+"最大值为"+$max+"求合"+$sum);
+end
+
+
+rule "测试accumulatefrom第二种用法"
+when
+$total : Integer() from
+       accumulate(Person($value:age),
+                  init( Integer total =0;),
+                  action( total += $value; ),
+                  result( total )
+         )
+then
+System.out.println($total+"accumulate from 用法 求和");
+end
+
+rule "测试accumulatefrom用法reverse"
+dialect "mvel"
+when
+$total : Double() from
+       accumulate(Person($age:age),
+                  init(Double totls = 0.0),
+                  action(totls+=$age; System.out.println(totls+">>>>>>>>>");),
+                  reverse(totls-=$age;System.out.println(totls+"<<<<<<<<");),
+                  result( totls )
+         )
+then
+        System.out.println($total+"");
+end
+
+
+rule "测试accumulatefrom3用法reverse"
+dialect "mvel"
+when
+$ps:Person(dous>=3)
+then
+$ps.setDous(1.2);
+   update($ps);
+   System.out.println($ps.dous);
+end

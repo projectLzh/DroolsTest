@@ -1,0 +1,38 @@
+package rules.isExists
+import com.pojo.Person;
+import com.pojo.School;
+
+
+rule "测试from"
+    when
+        $p:Person($ps:school)
+        $s:School(className=="一班") from $ps;
+    then
+        System.out.println("测试from");
+end
+
+rule "测试from2"
+    when
+        $p:Person()
+        $s:School(className=="一班") from $p.school;
+    then
+        System.out.println("测试from2");
+end
+
+
+rule "测试from3List"
+    when
+        $s:School()
+        $p:Person(className=="一班") from $s.classNameList
+    then
+        System.out.println("测试from3List"+$p.getName());
+end
+
+import function com.ruleFrom.RuleFrom.listfrom;
+rule "from的使用function"
+    when
+        Person($name:name);
+        $ps:Person(name==$name) from listfrom("张三",10)
+    then
+       System.out.println("from的使用function,通过function 传值 的方法"+$ps.getName()+$ps.getAge());
+end

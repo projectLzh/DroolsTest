@@ -1,0 +1,14 @@
+package rules.isPackage
+
+rule "testRuleNameOnly"
+    when
+    then
+       System.out.println("testRuleNameOnly 设置 enabled  true");
+end
+
+/*
+rule "testRuleNameOnly"
+    when
+    then
+       System.out.println("testRuleNameOnly 设置 enabled  true");
+end*/

@@ -1,0 +1,12 @@
+package rules.isFunction
+
+rule "function5"
+    when
+        eval(function05());
+    then
+        System.out.println("测试when中使用函数");
+end
+
+function Boolean function05(){
+    return true;
+}

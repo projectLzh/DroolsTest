@@ -1,0 +1,63 @@
+package rules.rulesHello
+import com.pojo.Person;
+	rule "test001"
+		when
+			eval(true);
+		then
+	       System.out.println("hello world");
+	end
+
+    rule "test002"
+        when
+           $p:Person();
+        then
+           System.out.println("输出引用对象"+$p);
+           drools.getRule().getName();
+    end
+
+    rule "test003"
+        when
+           $p:Person(name=="张三",age==30);
+        then
+           System.out.println("输出 传入的参数中确实有一位叫张三年龄在30岁的人"+$p);
+    end
+
+    rule "你好"
+        when
+           $p:Person(name=="张三",age==30);
+        then
+           $p.setAge(40);
+            update($p);
+           System.out.println("将为张三年龄为30岁的人改为40岁"+$p);
+    end
+
+    rule "test005"
+        when
+           $p:Person(name=="张三",age==40 && age>=0);
+        then
+           System.out.println("规则test005规则执行成功"+$p);
+    end
+
+
+    rule "test006"
+        when
+           $p:Person(age/2==20);
+        then
+           System.out.println("规则test006规则执行成功"+$p);
+    end
+
+    rule "test007"
+        when
+           $p:Person((age%2)==0);
+        then
+           System.out.println("规则test007规则执行成功"+$p);
+    end
+
+
+
+    rule "test008"
+        when
+           $p:Person(date.time-ldate.time==0);
+        then
+           System.out.println("$p"+($p.getDate().getTime()-$p.getLdate().getTime()));
+    end

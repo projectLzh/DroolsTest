@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <properties>
+        <property name="pattern">%date{yyyy-mm-dd hh:mm:ss} [%-5level] %logger{*.*...} - %msg%n%ex</property>
+    </properties>
+    <appenders>
+        <console name="console" target="system_out">
+            <patternlayout pattern="${pattern}"/>
+        </console>
+    </appenders>
+    <loggers>
+        <root level="debug">
+            <appenderref ref="console"/>
+        </root>
+        <logger name="org.springframework" level="warn"/>
+    </loggers>
+</configuration>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="flowToJava" name="flowToJava" tns:packageName="rulesTwo.isFlow.flowJava" >
+
+    <extensionElements>
+     <tns:import name="comTwo.flow.FlowToJava" />
+     <tns:import name="comTwo.flow.FlowToJavaTwo" />
+    </extensionElements>
+    <!-- nodes -->
+    <startEvent id="e0983390-5ae0-4e64-be4b-10efaa203803" name="Start"  isInterrupting="false">
+    </startEvent>
+    <businessRuleTask id="8463a0f5-b6cc-4edf-aae9-06a322c88fb3" name="Rule" g:ruleFlowGroup="flowToJava" 
+ implementation="http://www.jboss.org/drools/rule" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+    <endEvent id="ea289269-980c-43b0-9d14-cedc20c465b0" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <scriptTask id="1a21b2db-ba77-4740-8f86-4cdbcb190fa6" name="Script" scriptFormat="http://www.java.com/java" >
+      <script>FlowToJava.flowToJava01();</script>
+    </scriptTask>
+    <scriptTask id="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" name="Script" scriptFormat="http://www.java.com/java" >
+      <script>FlowToJavaTwo.getFlow().flowToJava01();</script>
+    </scriptTask>
+
+    <!-- connections -->
+    <sequenceFlow id="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8-8463a0f5-b6cc-4edf-aae9-06a322c88fb3" sourceRef="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" targetRef="8463a0f5-b6cc-4edf-aae9-06a322c88fb3" />
+    <sequenceFlow id="8463a0f5-b6cc-4edf-aae9-06a322c88fb3-ea289269-980c-43b0-9d14-cedc20c465b0" sourceRef="8463a0f5-b6cc-4edf-aae9-06a322c88fb3" targetRef="ea289269-980c-43b0-9d14-cedc20c465b0" />
+    <sequenceFlow id="e0983390-5ae0-4e64-be4b-10efaa203803-1a21b2db-ba77-4740-8f86-4cdbcb190fa6" sourceRef="e0983390-5ae0-4e64-be4b-10efaa203803" targetRef="1a21b2db-ba77-4740-8f86-4cdbcb190fa6" />
+    <sequenceFlow id="1a21b2db-ba77-4740-8f86-4cdbcb190fa6-bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" sourceRef="1a21b2db-ba77-4740-8f86-4cdbcb190fa6" targetRef="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="flowToJava" >
+      <bpmndi:BPMNShape bpmnElement="e0983390-5ae0-4e64-be4b-10efaa203803" >
+        <dc:Bounds x="32" y="16" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="8463a0f5-b6cc-4edf-aae9-06a322c88fb3" >
+        <dc:Bounds x="16" y="256" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ea289269-980c-43b0-9d14-cedc20c465b0" >
+        <dc:Bounds x="32" y="336" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="1a21b2db-ba77-4740-8f86-4cdbcb190fa6" >
+        <dc:Bounds x="16" y="96" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" >
+        <dc:Bounds x="16" y="176" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="bd943f2c-3337-46dc-b3d5-8b5a0585a1e8-8463a0f5-b6cc-4edf-aae9-06a322c88fb3" >
+        <di:waypoint x="56" y="200" />
+        <di:waypoint x="56" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="8463a0f5-b6cc-4edf-aae9-06a322c88fb3-ea289269-980c-43b0-9d14-cedc20c465b0" >
+        <di:waypoint x="56" y="280" />
+        <di:waypoint x="56" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="e0983390-5ae0-4e64-be4b-10efaa203803-1a21b2db-ba77-4740-8f86-4cdbcb190fa6" >
+        <di:waypoint x="56" y="40" />
+        <di:waypoint x="56" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="1a21b2db-ba77-4740-8f86-4cdbcb190fa6-bd943f2c-3337-46dc-b3d5-8b5a0585a1e8" >
+        <di:waypoint x="56" y="120" />
+        <di:waypoint x="56" y="200" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

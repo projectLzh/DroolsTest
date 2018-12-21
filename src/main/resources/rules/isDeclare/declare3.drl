@@ -1,0 +1,10 @@
+package rules.isDeclare2
+import com.pojo.Person;
+
+/*declare Person
+end*/
+rule "declare类型名相同测试"
+    when
+    then
+        System.out.println("declare类型名相同测试");
+end

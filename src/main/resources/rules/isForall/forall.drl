@@ -1,0 +1,10 @@
+package rules.isExists
+import com.pojo.Person;
+
+rule "测试forall"
+    when
+      forall($p : Person(name =="张三")
+               Person( this == $p,age==30))
+    then
+        System.out.println("测试forall");
+end

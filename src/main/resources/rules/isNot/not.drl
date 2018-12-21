@@ -1,0 +1,16 @@
+package rules.isNot
+import com.pojo.Person;
+
+rule "测试Not"
+    when
+       not Person();
+    then
+        System.out.println("测试Person 一定不在工作内存中");
+end
+
+rule "测试not  Not"
+    when
+     not(not Person());
+    then
+        System.out.println("测试Person 一定在工作内存中");
+end

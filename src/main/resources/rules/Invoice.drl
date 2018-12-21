@@ -1,0 +1,9 @@
+package rules;
+import com.pojo.Hello;
+
+rule "boy"
+    when
+        $h:Hello();
+    then
+        System.out.println("超标了");
+end

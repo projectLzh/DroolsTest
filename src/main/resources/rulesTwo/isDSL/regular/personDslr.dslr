@@ -1,0 +1,13 @@
+package rulesTwo.isDSL.regular;
+import com.pojo.Person;
+expander personDSL.dsl
+
+rule "dslTest"
+   when
+     学生办找一个人
+        - 年龄 小于或等于 30
+        - 名字 是 "张三"
+    then
+       学习决定将你安排到"四班"
+       打印出 33ww33
+end

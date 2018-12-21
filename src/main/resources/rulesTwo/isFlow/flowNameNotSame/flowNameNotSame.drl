@@ -1,0 +1,15 @@
+package rulesTwo.isFlow.flowNameNotSame
+
+rule "测试规则流参数不相同规则1"
+ruleflow-group "FlowNameNotSame1"
+    when
+    then
+        System.out.println(drools.getRule().getName());
+end
+
+rule "测试规则流参数不相同规则2"
+ruleflow-group "FlowNameNotSame2"
+    when
+    then
+        System.out.println(drools.getRule().getName());
+end

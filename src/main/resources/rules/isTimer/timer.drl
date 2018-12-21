@@ -1,0 +1,17 @@
+package rules.isTimer
+
+rule "testTimer1"
+ timer (int: 3s)
+    when
+    then
+        System.out.println("规则 testTimer1 3秒后执行");
+end
+
+
+
+rule "testTimer2"
+ timer (cron:0/1 * * * * ?)
+    when
+    then
+        System.out.println("规则 testTimer2 每一秒执行一次");
+end

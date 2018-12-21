@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="gateway" name="ruleFlow" tns:packageName="rulesTwo.isFlow.Gateway" >
+
+    <!-- nodes -->
+    <startEvent id="a1568f8d-02d6-4646-a537-ad75a880271b" name="Start"  isInterrupting="false">
+    </startEvent>
+    <inclusiveGateway id="2aa7beab-ae04-433a-8b63-4fc0aad042ab" name="Split" gatewayDirection="Diverging" >
+    </inclusiveGateway>
+    <scriptTask id="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" name="分支一为True" >
+      <script>System.out.println("设置第一个分支为True");</script>
+    </scriptTask>
+    <scriptTask id="9592c6fc-be88-4f2b-999d-040abd979775" name="分支二为False" >
+      <script>System.out.println("设置第二个分支为False");</script>
+    </scriptTask>
+    <scriptTask id="628a4d26-92fe-4746-a810-935d16779ebb" name="分支三为True" >
+      <script>System.out.println("设置第三个分支为True");</script>
+    </scriptTask>
+    <exclusiveGateway id="1cb4eb21-4878-40a5-ace2-831eedefc52a" name="Join" gatewayDirection="Converging" >
+    </exclusiveGateway>
+    <endEvent id="2d7f3852-2f72-482f-a39c-56dc59da582a" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <scriptTask id="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" name="Start" >
+      <script>System.out.println("流程网关测试开始");</script>
+    </scriptTask>
+    <scriptTask id="9a59d6e4-b025-4d63-8d00-adbec3da1b47" name="end" >
+      <script>System.out.println("流程网关测试结束");</script>
+    </scriptTask>
+
+    <!-- connections -->
+    <sequenceFlow id="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f-2aa7beab-ae04-433a-8b63-4fc0aad042ab" sourceRef="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" targetRef="2aa7beab-ae04-433a-8b63-4fc0aad042ab" />
+    <sequenceFlow id="2aa7beab-ae04-433a-8b63-4fc0aad042ab-bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" sourceRef="2aa7beab-ae04-433a-8b63-4fc0aad042ab" targetRef="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" name="分支1线" tns:priority="1" >
+      <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >eval(true)</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="2aa7beab-ae04-433a-8b63-4fc0aad042ab-9592c6fc-be88-4f2b-999d-040abd979775" sourceRef="2aa7beab-ae04-433a-8b63-4fc0aad042ab" targetRef="9592c6fc-be88-4f2b-999d-040abd979775" name="分支2线" tns:priority="2" >
+      <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >eval(true)</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="2aa7beab-ae04-433a-8b63-4fc0aad042ab-628a4d26-92fe-4746-a810-935d16779ebb" sourceRef="2aa7beab-ae04-433a-8b63-4fc0aad042ab" targetRef="628a4d26-92fe-4746-a810-935d16779ebb" name="分支3线" tns:priority="3" >
+      <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >eval(true)</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb-1cb4eb21-4878-40a5-ace2-831eedefc52a" sourceRef="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" targetRef="1cb4eb21-4878-40a5-ace2-831eedefc52a" />
+    <sequenceFlow id="9592c6fc-be88-4f2b-999d-040abd979775-1cb4eb21-4878-40a5-ace2-831eedefc52a" sourceRef="9592c6fc-be88-4f2b-999d-040abd979775" targetRef="1cb4eb21-4878-40a5-ace2-831eedefc52a" />
+    <sequenceFlow id="628a4d26-92fe-4746-a810-935d16779ebb-1cb4eb21-4878-40a5-ace2-831eedefc52a" sourceRef="628a4d26-92fe-4746-a810-935d16779ebb" targetRef="1cb4eb21-4878-40a5-ace2-831eedefc52a" />
+    <sequenceFlow id="9a59d6e4-b025-4d63-8d00-adbec3da1b47-2d7f3852-2f72-482f-a39c-56dc59da582a" sourceRef="9a59d6e4-b025-4d63-8d00-adbec3da1b47" targetRef="2d7f3852-2f72-482f-a39c-56dc59da582a" />
+    <sequenceFlow id="a1568f8d-02d6-4646-a537-ad75a880271b-db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" sourceRef="a1568f8d-02d6-4646-a537-ad75a880271b" targetRef="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" />
+    <sequenceFlow id="1cb4eb21-4878-40a5-ace2-831eedefc52a-9a59d6e4-b025-4d63-8d00-adbec3da1b47" sourceRef="1cb4eb21-4878-40a5-ace2-831eedefc52a" targetRef="9a59d6e4-b025-4d63-8d00-adbec3da1b47" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="gateway" >
+      <bpmndi:BPMNShape bpmnElement="a1568f8d-02d6-4646-a537-ad75a880271b" >
+        <dc:Bounds x="16" y="84" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="2aa7beab-ae04-433a-8b63-4fc0aad042ab" >
+        <dc:Bounds x="208" y="84" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" >
+        <dc:Bounds x="289" y="16" width="126" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="9592c6fc-be88-4f2b-999d-040abd979775" >
+        <dc:Bounds x="289" y="88" width="126" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="628a4d26-92fe-4746-a810-935d16779ebb" >
+        <dc:Bounds x="289" y="160" width="126" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="1cb4eb21-4878-40a5-ace2-831eedefc52a" >
+        <dc:Bounds x="454" y="84" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="2d7f3852-2f72-482f-a39c-56dc59da582a" >
+        <dc:Bounds x="658" y="85" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" >
+        <dc:Bounds x="96" y="88" width="80" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="9a59d6e4-b025-4d63-8d00-adbec3da1b47" >
+        <dc:Bounds x="541" y="88" width="80" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="db7ec5c7-b45b-47e1-b590-ac9e939a2e1f-2aa7beab-ae04-433a-8b63-4fc0aad042ab" >
+        <di:waypoint x="136" y="108" />
+        <di:waypoint x="232" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="2aa7beab-ae04-433a-8b63-4fc0aad042ab-bcf8aa6b-8e1b-4256-9c28-e14ae04831cb" >
+        <di:waypoint x="232" y="108" />
+        <di:waypoint x="352" y="36" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="2aa7beab-ae04-433a-8b63-4fc0aad042ab-9592c6fc-be88-4f2b-999d-040abd979775" >
+        <di:waypoint x="232" y="108" />
+        <di:waypoint x="352" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="2aa7beab-ae04-433a-8b63-4fc0aad042ab-628a4d26-92fe-4746-a810-935d16779ebb" >
+        <di:waypoint x="232" y="108" />
+        <di:waypoint x="352" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="bcf8aa6b-8e1b-4256-9c28-e14ae04831cb-1cb4eb21-4878-40a5-ace2-831eedefc52a" >
+        <di:waypoint x="352" y="36" />
+        <di:waypoint x="478" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="9592c6fc-be88-4f2b-999d-040abd979775-1cb4eb21-4878-40a5-ace2-831eedefc52a" >
+        <di:waypoint x="352" y="108" />
+        <di:waypoint x="478" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="628a4d26-92fe-4746-a810-935d16779ebb-1cb4eb21-4878-40a5-ace2-831eedefc52a" >
+        <di:waypoint x="352" y="180" />
+        <di:waypoint x="478" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="9a59d6e4-b025-4d63-8d00-adbec3da1b47-2d7f3852-2f72-482f-a39c-56dc59da582a" >
+        <di:waypoint x="581" y="108" />
+        <di:waypoint x="682" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="a1568f8d-02d6-4646-a537-ad75a880271b-db7ec5c7-b45b-47e1-b590-ac9e939a2e1f" >
+        <di:waypoint x="40" y="108" />
+        <di:waypoint x="136" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="1cb4eb21-4878-40a5-ace2-831eedefc52a-9a59d6e4-b025-4d63-8d00-adbec3da1b47" >
+        <di:waypoint x="478" y="108" />
+        <di:waypoint x="581" y="108" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

@@ -1,0 +1,19 @@
+package rules.isDeclare
+
+declare Person
+    name:String
+    age:int
+end
+
+rule "declareInsert"
+    when
+    then
+        insert(new Person("张三",20));
+end
+
+rule "declareTest"
+    when
+        $p:Person(name=="张三")
+    then
+       System.out.println("使用通过declare来实现insert 后进行操作");
+end

@@ -1,0 +1,26 @@
+package rules.isFunction
+
+rule "function1"
+    when
+    then
+        function01();
+        System.out.println("函数function02()的返回值"+function02());
+        function03("张小三");
+        System.out.println("函数function04()的返回值"+function04("李小四"));
+end
+
+function void function01(){
+    System.out.println("输出一个无参无返回值的函数");
+}
+function String function02(){
+    System.out.println("输出一个无参有返回值的函数");
+    return "Hello";
+}
+
+function void function03(String name){
+    System.out.println("输出一个有参无返回值的函数，输出参数是"+name);
+}
+function String function04(String name){
+    System.out.println("输出一个有参有返回值的函数，输出参数是"+name);
+    return name;
+}

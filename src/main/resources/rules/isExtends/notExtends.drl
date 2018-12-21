@@ -1,0 +1,17 @@
+package rules.isExtends
+import  com.pojo.Person
+import  com.pojo.School
+
+rule "test extends No1"
+    when
+       $p:Person(name=="张小三")
+    then
+       System.out.println("***********************");
+    end
+
+rule "test extends No2" extends "test extends No1"
+    when
+       $s:School(className=="一班")
+    then
+       System.out.println("-----------------------");
+end

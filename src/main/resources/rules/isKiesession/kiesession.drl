@@ -1,0 +1,27 @@
+	package rules.isKiesession
+	import com.pojo.Person;
+	import com.pojo.School;
+
+    rule "无状态规则测试Person"
+        when
+           $p:Person();
+        then
+          System.out.println(drools.getRule().getName()+$p.getName());
+
+    end
+
+
+    rule "无状态规则测试School"
+        when
+           $p:School();
+        then
+          System.out.println(drools.getRule().getName()+$p.getClassName());
+    end
+
+    rule "无状态规则测试School Person"
+        when
+           $s:School();
+           $p:Person();
+        then
+          System.out.println(drools.getRule().getName()+$s.getClassName()+"-------"+$p.getName());
+    end

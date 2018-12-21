@@ -1,0 +1,46 @@
+package rules.constraint.isContains;
+
+import com.pojo.Person;
+import com.pojo.School;
+
+rule containsTest001XX
+    when
+        $s:School();
+        $p:Person( $s.getClassName() contains className);
+    then
+      System.out.println("恭喜你，成功的使用了 containsTest001XX");
+end
+
+rule containsTest001
+    when
+        $s:School();
+        $p:Person(className  contains $s.getClassName());
+    then
+      System.out.println("恭喜你，成功的使用了 contains");
+end
+
+rule containsTest002
+    when
+        $s:School();
+        $p:Person(className  contains "一班");
+    then
+      System.out.println("规则 containsTest002 恭喜你，成功的使用了 contains");
+end
+
+
+rule containsTest003
+    when
+        $s:School();
+        $p:Person(className  contains $s.className);
+    then
+       $s.setClassName("二班");
+      update($s)
+end
+
+rule containsTest004
+    when
+        $s:School();
+        $p:Person(className not  contains $s.className);
+    then
+      System.out.println("规则 containsTest004 恭喜你，成功的使用了 not contains");
+end

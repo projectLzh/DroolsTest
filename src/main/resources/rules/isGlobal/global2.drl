@@ -1,0 +1,12 @@
+package rules.isGlobal
+import com.pojo.Person;
+//global  java.lang.Boolean count;
+global  java.lang.Integer count;
+
+rule "global2的使用update1"
+    when
+    then
+        count=new Integer(50);
+        System.out.println("global2update1------------>count"+count);
+end
+

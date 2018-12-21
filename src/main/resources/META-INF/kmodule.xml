@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="" packages="rules.rulesHello">
+        <ksession name="testhelloworld"/>
+    </kbase>
+    <kbase name="contains" packages="rules.constraint.isContains">
+        <ksession name="contains"/>
+    </kbase>
+    <kbase name="memberOf" packages="rules.constraint.isMemberOf">
+        <ksession name="memberOf"/>
+    </kbase>
+    <kbase name="matches" packages="rules.constraint.isMatches">
+        <ksession name="matches"/>
+    </kbase>
+    <kbase name="collection" packages="rules.constraint.isCollection">
+        <ksession name="collection"/>
+    </kbase>
+    <kbase name="collectionInsert" packages="rules.constraint.isCollection.insert">
+        <ksession name="collectionInsert" />
+    </kbase>
+    <kbase name="soundslike" packages="rules.constraint.isSoundslike">
+        <ksession name="soundslike"/>
+    </kbase>
+    <kbase name="isStr" packages="rules.constraint.isStr">
+        <ksession name="isStr"/>
+    </kbase>
+    <kbase name="isNoLoop" packages="rules.isNoLoop">
+        <ksession name="isNoLoop"/>
+    </kbase>
+    <kbase name="isLockNoActive" packages="rules.isLockNoActive">
+        <ksession name="isLockNoActive"/>
+    </kbase>
+    <kbase name="isSalience" packages="rules.isSalience">
+        <ksession name="isSalience"/>
+    </kbase>
+    <kbase name="isEnabled" packages="rules.isEnabled">
+        <ksession name="isEnabled"/>
+    </kbase>
+    <kbase name="isDate" packages="rules.isDate">
+        <ksession name="isDate"/>
+    </kbase>
+    <kbase name="isActivationGroup" packages="rules.isActivationGroup">
+        <ksession name="isActivationGroup"/>
+    </kbase>
+    <kbase name="isAgendaGroup" packages="rules.isAgendaGroup">
+        <ksession name="isAgendaGroup"/>
+    </kbase>
+    <kbase name="isTimer" packages="rules.isTimer">
+        <ksession name="isTimer"/>
+    </kbase>
+    <kbase name="isException" packages="rules.isException">
+        <ksession name="isException"/>
+    </kbase>
+    <kbase name="isPackage" packages="rules.isPackage">
+        <ksession name="isPackage"/>
+    </kbase>
+    <kbase name="isGlobal" packages="rules.isGlobal">
+        <ksession name="isGlobal"/>
+    </kbase>
+    <kbase name="isQuery" packages="rules.isQuery">
+        <ksession name="isQuery"/>
+    </kbase>
+    <kbase name="isFunction" packages="rules.isFunction">
+        <ksession name="isFunction"/>
+    </kbase>
+    <kbase name="isDeclare" packages="rules.isDeclare">
+        <ksession name="isDeclare"/>
+    </kbase>
+    <kbase name="isMetadata" packages="rules.isMetadata">
+        <ksession name="isMetadata"/>
+    </kbase>
+    <kbase name="isIn" packages="rules.isIn">
+        <ksession name="isIn"/>
+    </kbase>
+    <kbase name="isNot" packages="rules.isNot">
+        <ksession name="isNot"/>
+    </kbase>
+    <kbase name="isExists" packages="rules.isExists">
+        <ksession name="isExists"/>
+    </kbase>
+    <kbase name="isForall" packages="rules.isForall">
+        <ksession name="isForall"/>
+    </kbase>
+    <kbase name="isFrom" packages="rules.isFrom">
+        <ksession name="isFrom"/>
+    </kbase>
+    <kbase name="isCollect" packages="rules.isCollect">
+        <ksession name="isCollect"/>
+    </kbase>
+    <kbase name="isAccumulate" packages="rules.isAccumulate">
+        <ksession name="isAccumulate"/>
+    </kbase>
+    <kbase name="customize" packages="rules.isAccumulate.customize">
+        <ksession name="customize"/>
+    </kbase>
+    <kbase name="isExtends" packages="rules.isExtends">
+        <ksession name="isExtends"/>
+    </kbase>
+    <kbase name="isDoThen" packages="rules.isDoThen">
+        <ksession name="isDoThen"/>
+    </kbase>
+    <kbase name="isModify" packages="rules.isModify">
+        <ksession name="isModify"/>
+    </kbase>
+    <kbase name="isRHSCommand" packages="rules.isRHSCommand">
+        <ksession name="isRHSCommand"/>
+    </kbase>
+    <kbase name="isRuleName" packages="rulesTwo.isRuleName">
+        <ksession name="isRuleName"/>
+    </kbase>
+    <kbase name="isKiesession" packages="rules.rulesHello">
+        <ksession name="isKiesession"/>
+    </kbase>
+    <kbase name="isKbase" packages="rules.isKiesession">
+        <ksession name="kiesession" type="stateful"/>
+        <ksession name="stateless" type="stateless"/>
+    </kbase>
+    <kbase name="isXls" packages="rulesTwo.isXls">
+        <ksession name="isXls"/>
+    </kbase>
+    <kbase name="isDSL" packages="rulesTwo.isDSL">
+        <ksession name="isDSL"/>
+    </kbase>
+    <kbase name="regular" packages="rulesTwo.isDSL.regular">
+        <ksession name="regular"/>
+    </kbase>
+    <kbase name="scope" packages="rulesTwo.isDSL.scope">
+        <ksession name="scope"/>
+    </kbase>
+    <kbase name="isDrt" packages="rulesTwo.isDrt">
+        <ruleTemplate dtable="rulesTwo/isDrt/ExampleCheese.xls"
+                      template="rulesTwo/isDrt/Cheese.drt"
+                      row="3" col="2"/>
+        <ksession name="isDrt"/>
+    </kbase>
+    <kbase name="isFlow" packages="rulesTwo.isFlow">
+        <ksession name="isFlow"/>
+    </kbase>
+    <kbase name="flowNameSame" packages="rulesTwo.isFlow.flowNameSame">
+        <ksession name="flowNameSame"/>
+    </kbase>
+
+    <kbase name="droolsFusion" packages="droolsFusion" eventProcessingMode="stream">
+        <ksession name="droolsFusion"/>
+    </kbase>
+
+    <kbase name="hello" packages="rules" >
+        <ksession name="ksession-rules"/>
+    </kbase>
+</kmodule>

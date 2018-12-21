@@ -1,0 +1,16 @@
+package rules.isFunction
+
+import function com.rulesFunction.FunctionStatic.testStatic1;
+import function com.rulesFunction.FunctionStatic.testStatic2;
+import function com.rulesFunction.FunctionStatic.testStatic3;
+import function com.rulesFunction.FunctionStatic.testStatic4;
+
+rule "function4"
+    when
+    then
+        testStatic1();
+        System.out.println("函数function02()的返回值"+testStatic2());
+        testStatic3("张小三");
+        System.out.println("函数function04()的返回值"+testStatic4("李小四"));
+end
+

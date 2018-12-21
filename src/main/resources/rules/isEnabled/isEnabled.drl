@@ -1,0 +1,16 @@
+package rules.isEnabled
+
+rule "testEnabled1"
+    enabled  true
+    when
+    then
+       System.out.println("testEnabled1 设置 enabled  true");
+end
+
+rule "testEnabled2"
+enabled false
+    when
+    then
+       System.out.println("testEnabled2 设置  enabled  false");
+end
+

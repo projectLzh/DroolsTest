@@ -1,0 +1,18 @@
+template header
+age
+className
+
+package rulesTwo.isDrt;
+import com.pojo.Person;
+
+template "cheesefans"
+
+rule "Cheese fans_@{row.rowNumber}"
+no-loop true
+    when
+       $p: Person(age == @{age})
+    then
+        $p.setClassName("@{className}");
+        update($p);
+end
+end template

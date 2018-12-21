@@ -1,0 +1,65 @@
+package rules.isNoLoop
+import com.pojo.Person;
+
+rule "testNoLoop1"
+    //no-loop true
+    when
+        $p:Person(age==30);
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testNoLoop1 不设置 no-loop时的效果");
+end
+
+
+/*rule "testNoLoop2"
+    no-loop true
+    when
+        $p:Person(age==30);
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testNoLoop2 设置 no-loop时的效果");
+end*/
+
+/*
+rule "testNoLoop3"
+    no-loop true
+    when
+        $p:Person(name=="张三");
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testNoLoop3 设置 no-loop时的效果");
+end
+
+rule "testNoLoop4"
+    no-loop true
+    when
+        $p:Person(age==30);
+    then
+       $p.setName("张三");
+       update($p);
+       System.out.println("testNoLoop4 设置 no-loop时的效果");
+end*/
+
+/*rule "testNoLoop5"
+    //no-loop true
+    when
+        $p:Person(name=="张三");
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testNoLoop5 不设置 no-loop时的效果");
+end*/
+
+/*
+rule "testNoLoop6"
+    //no-loop true
+    when
+        $p:Person(name=="张三",age==30);
+    then
+       $p.setAge(30);
+       update($p);
+       System.out.println("testNoLoop6 不设置 no-loop时的效果");
+end*/

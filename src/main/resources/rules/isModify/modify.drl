@@ -1,0 +1,27 @@
+package rules.isModify
+import com.pojo.Person;
+
+rule "测试modfiy"
+no-loop true
+salience 20
+    when
+        $p:Person(name=="张三")
+    then
+        modify($p){
+            setAge(50),
+            setName("李四")
+        }
+       System.out.println("将Person为张三的人修改为"+$p.getName()+"年龄修改为"+$p.getAge());
+end
+
+rule "测试update"
+no-loop true
+salience 10
+    when
+        $p:Person(name=="李四")
+    then
+        $p.setName("王五");
+        $p.setAge(60);
+        update($p);
+      System.out.println("将Person为李四的人修改为"+$p.getName()+"年龄修改为"+$p.getAge());
+end

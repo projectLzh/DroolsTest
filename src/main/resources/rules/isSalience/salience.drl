@@ -1,0 +1,30 @@
+package rules.isSalience
+import com.pojo.Person;
+
+rule "testSalience1"
+salience 10
+    when
+    then
+       System.out.println("hello testSalience1");
+end
+
+rule "testSalience2"
+salience 20
+    when
+    then
+       System.out.println("hello testSalience2");
+end
+
+rule "testSalience3"
+salience 5
+    when
+    then
+       System.out.println("hello testSalience3");
+end
+
+rule "testSalience4"
+salience (Math.random() * 10 + 1)
+    when
+    then
+       System.out.println("hello testSalience4");
+end

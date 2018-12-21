@@ -1,0 +1,31 @@
+package rules.isGlobal
+import com.pojo.Person;
+global  java.lang.Integer count;
+
+rule "global的使用update1"
+    dialect "mvel"
+    when
+    then
+        System.out.println("globalupdate1------------>count"+count);
+        count=10;
+        System.out.println("globalupdate1------------>count"+count);
+end
+rule "global的使用update2"
+    dialect "mvel"
+    when
+    then
+        System.out.println("globalupdate2----------->count"+count);
+end
+rule "global的使用update3"
+    when
+     $total : Double() from
+       accumulate(Person(),
+                  init(Double totls = 0.0),
+                  action(count=20;totls+=1;System.out.println(totls+">>>>>>>>>"+count);),
+                  reverse( totls-=1;   System.out.println(totls+"<<<<<<<<");),//,
+                  result( totls )
+         )
+    then
+        count = 90;
+        System.out.println($total+"globalupdate3reverse>>>>>>>>> count"+count);//+$s.count+$s.name);
+end

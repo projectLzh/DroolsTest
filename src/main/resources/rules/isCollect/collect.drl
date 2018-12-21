@@ -1,0 +1,29 @@
+package rules.isCollect
+import com.pojo.Person;
+import com.pojo.School;
+import java.util.ArrayList;
+
+
+rule "测试from collect"
+    when
+       $al : ArrayList() from collect( $p:Person(className=="一班"))
+    then
+        System.out.println("测试from collect 测试结果为 ArrayList 大小为->"+$al.size());
+end
+
+
+rule "测试from collect pattern"
+    when
+       $al : ArrayList(size>=3) from collect( $p:Person(className=="一班"))
+    then
+        System.out.println("测试from collect pattern 测试结果为 ArrayList 大小为->"+$al.size());
+end
+
+
+rule "测试from collect from "
+    when
+       $s:School()
+       $al : ArrayList(size>=3) from collect( $p:Person(className=="一班") from $s.classNameList )
+    then
+        System.out.println("测试from collect from  测试结果为 ArrayList 大小为->"+$al.size());
+end

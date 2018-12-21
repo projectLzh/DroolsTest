@@ -1,0 +1,16 @@
+package rulesTwo.isRuleName
+import com.pojo.Person;
+import com.pojo.School;
+
+
+rule "指定规则名三"
+    when
+    then
+        System.out.println("调用规则"+drools.getRule().getName());
+end
+
+rule "指定规则名四"
+    when
+    then
+        System.out.println("调用规则"+drools.getRule().getName());
+end

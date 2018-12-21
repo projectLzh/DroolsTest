@@ -1,0 +1,19 @@
+package rulesTwo.isFlow
+import com.pojo.Person;
+import com.pojo.School;
+
+rule "规则流的第一个例子"
+dialect "mvel"
+ruleflow-group "No1_drools_RuleFlow"
+    when
+        
+    then
+        System.out.println("输出第一个规则流");
+end
+ 
+ 
+rule "没有使用规则流属性的规则"
+    when
+    then
+        System.out.println("没有使用规则流属性的规则");
+end

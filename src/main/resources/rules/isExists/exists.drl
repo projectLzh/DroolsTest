@@ -1,0 +1,16 @@
+package rules.isExists
+import com.pojo.Person;
+
+rule "测试Exists"
+    when
+       exists Person();
+    then
+        System.out.println("测试Person 一定在工作内存中");
+end
+
+rule "测试not Exists"
+    when
+     not (exists Person());
+    then
+        System.out.println("测试Person 一定在不工作内存中");
+end

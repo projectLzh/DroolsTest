@@ -1,0 +1,10 @@
+package rules.constraint.isSoundslike;
+
+import com.pojo.Person;
+
+rule isSoundslikeTest001
+    when
+        $p:Person(name  soundslike "foobar");
+    then
+      System.out.println("恭喜你，成功的使用了 isSoundslike");
+end

@@ -1,0 +1,11 @@
+package rules.isException
+dialect "mvel"
+import com.pojo.Person
+
+fdsfdsfds
+
+rule "exception1"
+    when
+    then
+       System.out.println("-----------------");
+end

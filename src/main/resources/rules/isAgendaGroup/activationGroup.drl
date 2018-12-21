@@ -1,0 +1,123 @@
+package rules.isAgendaGroup
+
+rule "testisAgendaGroup1"
+agenda-group "ag1"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testisAgendaGroup1 设置属性 agenda-group \"ag1\" ");
+end
+
+rule "testisAgendaGroup2"
+agenda-group "ag2"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testisAgendaGroup2 设置属性 agenda-group \"ag2\" ");
+end
+
+rule "testisAgendaGroup3"
+agenda-group "ag1"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testisAgendaGroup3 设置属性 agenda-group \"ag1\" ");
+end
+
+
+rule "testisagaf1"
+agenda-group "ag3"
+auto-focus true
+    when
+        eval(true)
+    then
+        System.out.println("规则 testisagaf1 设置属性 agenda-group \"ag3\" ");
+end
+
+rule "testisagaf2"
+agenda-group "ag4"
+auto-focus true
+    when
+        eval(true)
+    then
+        System.out.println("规则 testisagaf2 设置属性 agenda-group \"ag4\" ");
+end
+
+
+
+rule "testagag1"
+agenda-group "ag1"
+activation-group "agag"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag1 设置属性 agenda-group  \"ag1\"  activation-group \"agag\"");
+end
+
+rule "testagag2"
+activation-group "agag"
+agenda-group "ag1"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag2 设置属性 agenda-group \"ag1\"  activation-group \"agag\"");
+end
+
+
+rule "testagag3"
+agenda-group "ag6"
+activation-group "agag1"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag3 设置属性 agenda-group  \"ag6\"  activation-group \"agag1\"");
+end
+
+rule "testagag4"
+activation-group "agag2"
+agenda-group "ag6"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag4 设置属性 agenda-group \"ag6\"  activation-group \"agag2\"");
+end
+
+
+rule "testagag5"
+agenda-group "ag8"
+activation-group "agag1"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag5 设置属性 agenda-group  \"ag8\"  activation-group \"agag1\"");
+end
+
+rule "testagag6"
+activation-group "agag2"
+agenda-group "ag9"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testagag6 设置属性 agenda-group \"ag9\"  activation-group \"agag2\"");
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

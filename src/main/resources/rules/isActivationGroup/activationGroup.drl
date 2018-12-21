@@ -1,0 +1,35 @@
+package rules.isActivationGroup
+
+rule "testActivationGroup1"
+activation-group "testGroup"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testActivationGroup1 设置属性 activation-group \"testGroup\" ");
+end
+
+rule "testActivationGroup2"
+activation-group "testGroup"
+    when
+        eval(true)
+    then
+        System.out.println("规则 testActivationGroup2 设置属性 activation-group \"testGroup\" ");
+end
+
+rule "testAgs1"
+   salience 10
+   activation-group "testAgs"
+       when
+           eval(true)
+       then
+           System.out.println("规则 testAgs1 设置属性 activation-group \"testAgs\" ");
+   end
+
+   rule "testAgs2"
+   salience 11
+   activation-group "testAgs"
+       when
+           eval(true)
+       then
+           System.out.println("规则 testAgs2 设置属性 activation-group \"testAgs\" ");
+   end

@@ -1,0 +1,29 @@
+package rules.constraint.isCollection.isinsert;
+
+import com.pojo.School;
+import com.pojo.Person;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+
+rule collectionTestList
+    when
+       $l:List();
+    then
+    System.out.println("输出List第二个元素内容为"+$l.get(1));
+end
+
+
+rule collectionTestSet
+     when
+        $s:Set();
+     then
+     System.out.println("输出Set第一个元素内容为"+$s.iterator().next());
+ end
+
+ rule collectionTestMap
+      when
+         $m:Map();
+      then
+     System.out.println("输出Map的元素Key为一班的值"+$m.get("一班"));
+  end
