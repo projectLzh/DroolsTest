@@ -1,7 +1,6 @@
 package com.rulesHello;
 
 import com.pojo.Person;
-import jdk.internal.org.objectweb.asm.Handle;
 import org.drools.core.event.DebugAgendaEventListener;
 import org.drools.core.event.DebugRuleRuntimeEventListener;
 import org.junit.Test;

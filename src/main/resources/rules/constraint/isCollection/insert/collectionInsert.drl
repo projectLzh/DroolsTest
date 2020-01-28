@@ -1,4 +1,4 @@
-package rules.constraint.isCollection.isinsert;
+package rules.constraint.isCollection.insert;
 
 import com.pojo.School;
 import com.pojo.Person;
