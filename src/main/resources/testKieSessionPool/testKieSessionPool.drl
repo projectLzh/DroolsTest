@@ -1,0 +1,11 @@
+package testKieSessionPool;
+
+import com.pojo.Person;
+
+
+rule "testKieSessionPool"
+    when
+        $p:Person()
+    then
+       //System.out.println("输出");
+end

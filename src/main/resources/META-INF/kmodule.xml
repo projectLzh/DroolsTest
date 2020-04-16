@@ -16,7 +16,7 @@
         <ksession name="collection"/>
     </kbase>
     <kbase name="collectionInsert" packages="rules.constraint.isCollection.insert">
-        <ksession name="collectionInsert" />
+        <ksession name="collectionInsert"/>
     </kbase>
     <kbase name="soundslike" packages="rules.constraint.isSoundslike">
         <ksession name="soundslike"/>
@@ -144,7 +144,12 @@
         <ksession name="droolsFusion"/>
     </kbase>
 
-    <kbase name="hello" packages="rules" >
+    <kbase name="hello" packages="rules">
         <ksession name="ksession-rules"/>
+    </kbase>
+
+    <kbase name="testKieSessionPoolBase" packages="testKieSessionPool">
+        <ksession name="kieSession_rule"></ksession>
+        <ksession name="kieSession_rule_stateless"></ksession>
     </kbase>
 </kmodule>
