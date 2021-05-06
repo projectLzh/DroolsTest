@@ -1,8 +1,15 @@
 package rules;
 import com.pojo.Hello;
 
-rule "boy"
+rule "boy_a"
     when
     then
-        System.out.println("超标了");
+        System.out.println("boy_a");
 end
+
+rule "boy_b"
+    when
+    then
+        System.out.println("boy_b");
+end
+

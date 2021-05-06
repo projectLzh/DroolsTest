@@ -1,5 +1,6 @@
 template header
 age
+name
 className
 
 package rulesTwo.isDrt;
@@ -10,7 +11,7 @@ template "cheesefans"
 rule "Cheese fans_@{row.rowNumber}"
 no-loop true
     when
-       $p: Person(age == @{age})
+       $p: Person(age == @{age},name=="@{name}")
     then
         $p.setClassName("@{className}");
         update($p);

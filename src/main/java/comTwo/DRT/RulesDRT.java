@@ -38,8 +38,14 @@ public class RulesDRT {
         Person person = new Person();
         person.setAge(50);
         person.setClassName("一班");
+        person.setName("");
+
+        Person person2 = new Person();
+        person2.setAge(50);
+        person2.setClassName("一班");
         Collection<Person> cfl = new ArrayList<>();
         cfl.add(person);//每add一次，就代码一条规则
+        cfl.add(person2);//每add一次，就代码一条规则
         InputStream dis = null;
         try {
             dis = ResourceFactory.newClassPathResource("rulesTwo/isDrt/Cheese.drt", RulesDRT.class).getInputStream();
@@ -53,7 +59,7 @@ public class RulesDRT {
         KieSession ksession = helper.build().newKieSession();
         Person ps = new Person();
         ps.setAge(50);
-        person.setName("张三");
+        person.setName("");
         ksession.insert(ps);
         int i = ksession.fireAllRules();
         System.out.println(ps.getClassName() + "	" + i + "次");

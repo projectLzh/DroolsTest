@@ -1,0 +1,21 @@
+package rulePattern
+
+import com.pi.DemoTest
+import com.pi.UserListDemo
+import com.pi.SystemListDemo
+import java.util.List
+import java.util.ArrayList
+
+global  java.util.List al;
+
+
+rule "test001"
+    no-loop true
+    when
+        $d:DemoTest()
+        $ss:SystemListDemo($sv:value ) from $d.systemList;
+        $al:ArrayList() from collect( $us:UserListDemo($uv:value contains $sv) from $d.userList)
+    then
+
+end
+

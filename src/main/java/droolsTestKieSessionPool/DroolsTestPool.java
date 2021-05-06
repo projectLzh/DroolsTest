@@ -124,11 +124,15 @@ public class DroolsTestPool {
     public void testStatelessSessionPool_2() {
         StatelessKieSession stateless = kieContainerSessionsPool.newStatelessKieSession("kieSession_rule_stateless");
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i <10000000; i++) {
+            long startTime2 = System.currentTimeMillis();
             Person person = new Person();
             person.setName("张三");
-            person.setAge(10);
+            person.setAge(i);
+            person.setDous(1.5);
             stateless.execute(person);
+            long endTime = System.currentTimeMillis();
+            System.out.println((endTime - startTime2)+"每一次计算的结果");
         }
         long endTime = System.currentTimeMillis();
         System.out.println((endTime - startTime));

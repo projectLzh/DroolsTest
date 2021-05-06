@@ -14,7 +14,7 @@ public class DroolsFunsionTest {
         Person person2 = new Person("张三",60);
         Person person3 = new Person("张三",70);
         ks.insert(person1);
-        Thread.sleep(4000);
+        //Thread.sleep(4000);
         ks.insert(person2);
         ks.insert(person3);
         int count = ks.fireAllRules();

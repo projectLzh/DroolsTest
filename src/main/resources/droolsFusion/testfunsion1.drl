@@ -9,7 +9,7 @@ end
 rule "testdroolsFusion"
 
 	when
-        $p:Person(name=="张三") over window:length(2)
+        $p:Person(name=="张三") over window:length(4)
 	then
         System.out.println("age="+$p.getAge());
 end

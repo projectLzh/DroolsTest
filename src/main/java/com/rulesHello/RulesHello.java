@@ -2,8 +2,10 @@ package com.rulesHello;
 
 import com.pojo.Person;
 import jdk.internal.org.objectweb.asm.Handle;
+import org.drools.core.base.RuleNameEqualsAgendaFilter;
 import org.drools.core.event.DebugAgendaEventListener;
 import org.drools.core.event.DebugRuleRuntimeEventListener;
+import org.junit.Rule;
 import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
@@ -34,6 +36,14 @@ public class RulesHello {
         System.out.println(person.getAge());
         System.out.println("总执行了" + count + "条规则");
         ks.dispose();
+    }
+    @Test
+    public void test(){
+        KieServices kss = KieServices.Factory.get();
+        KieContainer kc = kss.getKieClasspathContainer();
+        KieSession ks = kc.newKieSession("ksession-rules");
+        //ks.fireAllRules();
+        ks.fireAllRules(new RuleNameEqualsAgendaFilter("boy_a"));
     }
 }
 

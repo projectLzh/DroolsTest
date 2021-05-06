@@ -152,4 +152,8 @@
         <ksession name="kieSession_rule"></ksession>
         <ksession name="kieSession_rule_stateless"></ksession>
     </kbase>
+
+    <kbase name="rulePattern" packages="rulePattern">
+        <ksession name="rulePatternSession"/>
+    </kbase>
 </kmodule>
